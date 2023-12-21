@@ -1,0 +1,9 @@
+div button {    
+    margin: 0 2rem;
+    background-color: rgb(29, 107, 131);
+    color: rgb(255, 255, 255);
+}
+
+div div {
+    margin: 2rem;
+}
