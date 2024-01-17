@@ -1,0 +1,16 @@
+.CardItem {
+    margin: 5px;
+    padding: 30px;
+    background-color: rgba(98, 170, 181, 0.6);
+    border-radius: 10px;
+}
+
+.ItemImg {
+    margin: 50px;
+    width: 150px;
+    padding: 15px;
+}
+
+p {
+    font-size: 20px;
+}

@@ -1,20 +1,28 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.css';
+// import ItemCount from './componentes/ItemCount/ItemCount.jsx';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './componentes/NavBar/NavBar.jsx'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer.jsx';
-import ItemCount from './componentes/ItemCount/ItemCount.jsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer.jsx';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
-    <>
-    <NavBar />
-    <ItemListContainer greeting={'Bienvenidos'} />
-    <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log ('Cantidad agregada ', quantity)}/>
-    </>
-  )
+    <div className='App'>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+          <Route path='*' element={<h1>404 NOT FOUND</h1>} />         
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
-export default App
+export default App;
